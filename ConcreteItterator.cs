@@ -2,6 +2,13 @@ using System;
 
 class ConcreteItterator : IItterator
 {
+    private ConcreteAggregate concreteAggregate;
+
+    public ConcreteItterator(ConcreteAggregate concreteAggregate)
+    {
+        this.concreteAggregate = concreteAggregate;
+    }
+
     public object CurrentItem()
     {
         throw new NotImplementedException();
