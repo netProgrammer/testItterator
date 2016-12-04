@@ -22,7 +22,7 @@ class ConcreteItterator : IItterator
 
     public bool IsDone()
     {
-        throw new NotImplementedException();
+        return current >= aggregate.Count - 1;
     }
 
     public object Next()
