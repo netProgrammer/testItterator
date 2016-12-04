@@ -2,21 +2,22 @@ using System;
 
 class ConcreteItterator : IItterator
 {
-    private ConcreteAggregate concreteAggregate;
+    private ConcreteAggregate aggregate;
+    private int current;
 
     public ConcreteItterator(ConcreteAggregate concreteAggregate)
     {
-        this.concreteAggregate = concreteAggregate;
+        aggregate = concreteAggregate;
     }
 
     public object CurrentItem()
     {
-        throw new NotImplementedException();
+        return aggregate[current];
     }
 
     public object First()
     {
-        throw new NotImplementedException();
+        return aggregate[0];
     }
 
     public bool IsDone()
@@ -26,6 +27,11 @@ class ConcreteItterator : IItterator
 
     public object Next()
     {
-        throw new NotImplementedException();
+        object element = null;
+        if(current < aggregate.Count - 1){
+            element = aggregate[++current];
+        }
+
+        return element;
     }
 }
