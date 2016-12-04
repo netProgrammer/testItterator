@@ -1,0 +1,4 @@
+interface IAggregate
+{
+    IItterator CreateItterator();
+}
